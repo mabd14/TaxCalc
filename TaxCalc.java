@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main {
+public class TaxCalc {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -21,7 +21,7 @@ public class Main {
             double tax = bracket1 + bracket2 + bracket3;
             System.out.printf("£" + "%.2f", tax);
         }
-        else if(salary > 30_000 & salary < 50_000){
+        else if(salary > 30_000 & salary <= 50_000){
             double bracket1 = 0.05 * 15_000;
             double topBracket = salary - 30_000;
 //            System.out.println(topBracket);
@@ -29,12 +29,12 @@ public class Main {
             double tax = bracket1 + bracket2;
             System.out.printf("£" + "%.2f", tax);
         }
-        else if(salary > 15_000 & salary < 30_000) {
+        else if(salary > 15_000 & salary <= 30_000) {
             double topBracket = salary - 15_000;
             double tax = 0.05 * topBracket;
             System.out.printf("£" + "%.2f", tax);
         }
-        else if(salary < 15_000) {
+        else if(salary <= 15_000) {
             System.out.println("£0.00");
         }
 
